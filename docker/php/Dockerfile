@@ -1,13 +1,13 @@
 FROM php:8.2-fpm
 
 RUN apt-get update --fix-missing
-RUN apt-get install -y zip unzip libonig-dev libicu-dev
-RUN apt-get install -y libzip-dev libpq-dev
-RUN apt-get install -y build-essential libssl-dev zlib1g-dev
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get install -y zip unzip libonig-dev libicu-dev \
+    libzip-dev libpq-dev build-essential libssl-dev zlib1g-dev
+
+RUN pecl install mongodb-1.21.0 \
+    && docker-php-ext-enable mongodb
 
 RUN docker-php-ext-install pdo zip pdo_pgsql pgsql opcache intl bcmath mbstring
-RUN docker-php-ext-enable pdo zip pdo_pgsql pgsql opcache intl bcmath mbstring
 
 COPY /api/php.ini /usr/local/etc/php/conf.d/opcache.ini
 
@@ -22,8 +22,8 @@ RUN chown -R www-data:www-data /var/www && \
 
 RUN composer install --prefer-dist --no-dev --optimize-autoloader --no-interaction
 
-RUN php saya key
-RUN php saya view:cache
+#RUN php saya key
+#RUN php saya view:cache
 
 USER www-data
 

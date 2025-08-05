@@ -3,9 +3,9 @@
 <p align="center">
 <a href="https://php.net"><img src="https://img.shields.io/packagist/dependency-v/kamu/framework/php.svg?color=birghtgreen" alt="PHP Programming Language"></a>
 <a href="https://packagist.org/packages/kamu/framework"><img src="https://img.shields.io/packagist/dt/kamu/framework" alt="Total Downloads"></a>
-<a href="https://cie.my.id"><img src="https://cie.my.id/undangan-api?label=views&color=brightgreen" alt="views"></a>
-<a href="https://shields.io"><img src="https://img.shields.io/github/repo-size/dewanakl/undangan-api?color=brightgreen" alt="Repo size"></a>
-<a href="https://shields.io"><img src="https://img.shields.io/github/license/dewanakl/undangan-api?color=brightgreen" alt="License"></a>
+<a href="https://cie.my.id"><img src="https://cie.my.id/wedding-api?label=views&color=brightgreen" alt="views"></a>
+<a href="https://shields.io"><img src="https://img.shields.io/github/repo-size/dewanakl/wedding-api?color=brightgreen" alt="Repo size"></a>
+<a href="https://shields.io"><img src="https://img.shields.io/github/license/dewanakl/wedding-api?color=brightgreen" alt="License"></a>
 </p>
 
 ## 📖 About Kamu
@@ -15,8 +15,9 @@
 ## 📡 Api Spec
 
 See in postman collection
+
 ```url
-https://www.postman.com/dewanakl/workspace/undangan/collection/20716209-a29ef362-b4dc-4c02-8904-d90749a40842?action=share
+https://www.postman.com/dewanakl/workspace/wedding/collection/20716209-a29ef362-b4dc-4c02-8904-d90749a40842?action=share
 ```
 
 > [!WARNING]
@@ -27,47 +28,48 @@ https://www.postman.com/dewanakl/workspace/undangan/collection/20716209-a29ef362
 <details>
 <summary>🛠️ Run without docker</summary>
 
-- Create file env
+-   Create file env
 
     ```bash
     cp .env.example .env
     ```
 
-- Install package
+-   Install package
 
     ```bash
     composer install
     ```
 
-- Create key application
+-   Create key application
 
     ```bash
     php saya key
     ```
 
-- Execute migration database
+-   Execute migration database
 
     ```bash
     php saya migrasi --gen
     ```
 
-- Run in development server
+-   Run in development server
 
-    ```bash
-    php saya coba
-    ```
-</details>
+        ```bash
+        php saya coba
+        ```
+
+    </details>
 
 <details>
 <summary>🐳 Run with docker</summary>
 
-- Create file env
+-   Create file env
 
     ```bash
     cp .env.example .env
     ```
 
-- Change and customize env file
+-   Change and customize env file
 
     ```text
     BASEURL=https://your.domain.or.ipaddress:8080/
@@ -75,88 +77,89 @@ https://www.postman.com/dewanakl/workspace/undangan/collection/20716209-a29ef362
     DB_DRIV=pgsql
     DB_HOST=db
     DB_PORT=5432
-    DB_NAME=undangan
+    DB_NAME=wedding
     DB_USER=root
     DB_PASS=12345678
 
     JWT_KEY=valueIsSecure
     ```
 
-- Build and run image
+-   Build and run image
 
     ```bash
     docker compose up --build -d
     ```
 
-- Execute migration
+-   Execute migration
 
-    > **_NOTE:_** Wait until the database is ready.
+        > **_NOTE:_** Wait until the database is ready.
 
-    ```bash
-    docker exec undangan-app php saya migrasi --gen
-    ```
-</details>
+        ```bash
+        docker exec wedding-app php saya migrasi --gen
+        ```
+
+    </details>
 
 <details>
 <summary>⚡ Deployment on vercel</summary>
 
-- Create .env file
+-   Create .env file
 
     ```bash
     cp .env.example .env
     ```
 
-- Install package
+-   Install package
 
     ```bash
     composer install
     ```
 
-- Create key application
+-   Create key application
 
     ```bash
     php saya key
     ```
 
-- Execute migration database
+-   Execute migration database
 
     ```bash
     php saya migrasi --gen
     ```
 
-- Push on your github.
-- Create new project in vercel.
-- Import from your repository.
-- Add environment variables :
-  - DB_HOST (your host cloud dbms)
-  - DB_PASS (your password cloud dbms)
-  - DB_USER (your username cloud dbms)
-  - DB_NAME (your name of database cloud dbms)
-  - DB_PORT (your port cloud dbms)
-  - DB_DRIV (type cloud dbms [ex. mysql or pgsql])
-  - JWT_KEY [ex. 123]
-  - HTTPS [true]
-  - DEBUG [false]
-  - LOG [false]
-  - APP_KEY [copy from your local env]
-- Done.
+-   Push on your github.
+-   Create new project in vercel.
+-   Import from your repository.
+-   Add environment variables :
+    -   DB_HOST (your host cloud dbms)
+    -   DB_PASS (your password cloud dbms)
+    -   DB_USER (your username cloud dbms)
+    -   DB_NAME (your name of database cloud dbms)
+    -   DB_PORT (your port cloud dbms)
+    -   DB_DRIV (type cloud dbms [ex. mysql or pgsql])
+    -   JWT_KEY [ex. 123]
+    -   HTTPS [true]
+    -   DEBUG [false]
+    -   LOG [false]
+    -   APP_KEY [copy from your local env]
+-   Done.
 </details>
 
 ## 🚀 Get Started Project
 
-- Create a project with composer
+-   Create a project with composer
 
     ```bash
     composer create-project kamu/kamu coba-app
     ```
 
-- Move the folder
+-   Move the folder
 
     ```bash
     cd coba-app
     ```
 
-- Run in development server
+-   Run in development server
 
     ```bash
     php saya coba

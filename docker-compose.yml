@@ -3,40 +3,39 @@ services:
         build:
             context: .
             dockerfile: docker/php/Dockerfile
-        container_name: undangan-app
+        container_name: wedding-app
         depends_on:
             - db
         networks:
-            - undangan
+            - wedding
 
     db:
         image: postgres:latest
-        container_name: undangan-db
+        container_name: wedding-db
         environment:
-            POSTGRES_DB: undangan
+            POSTGRES_DB: wedding
             POSTGRES_USER: root
             POSTGRES_PASSWORD: 12345678
         volumes:
             - postgres_data:/var/lib/postgresql/data
         networks:
-            - undangan
+            - wedding
 
     nginx:
         build:
             context: .
             dockerfile: docker/nginx/Dockerfile
-        container_name: undangan-nginx
+        container_name: wedding-nginx
         ports:
             - 8080:80
         networks:
-            - undangan
+            - wedding
         depends_on:
             - app
 
 volumes:
     postgres_data:
 
-
 networks:
-    undangan:
+    wedding:
         driver: bridge
