@@ -79,7 +79,7 @@ https://www.postman.com/dewanakl/workspace/wedding/collection/20716209-a29ef362-
     DB_PORT=5432
     DB_NAME=wedding
     DB_USER=root
-    DB_PASS=12345678
+    DB_PASS=12358132134
 
     JWT_KEY=valueIsSecure
     ```

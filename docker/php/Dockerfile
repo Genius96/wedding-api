@@ -22,8 +22,8 @@ RUN chown -R www-data:www-data /var/www && \
 
 RUN composer install --prefer-dist --no-dev --optimize-autoloader --no-interaction
 
-#RUN php saya key
-#RUN php saya view:cache
+RUN php saya key
+RUN php saya view:cache
 
 USER www-data
 

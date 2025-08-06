@@ -19,7 +19,7 @@ return new class implements Generator
             $user = User::create([
                 'name' => 'User',
                 'email' => 'user@example.com',
-                'password' => Hash::make('12345678')
+                'password' => Hash::make('12358132134')
             ]);
         }
 
