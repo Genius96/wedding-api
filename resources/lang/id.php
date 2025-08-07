@@ -5,55 +5,52 @@ return [
      * AuthManager.
      */
     \Core\Auth\AuthManager::NAME => [
-
-        'failed' => ':email atau :password salah.',
+        'failed' => ':email hoặc :password không đúng.',
     ],
 
     /**
      * Time.
      */
     \Core\Support\Time::NAME => [
+        'y' => 'năm',
+        'm' => 'tháng',
+        'd' => 'ngày',
+        'h' => 'giờ',
+        'i' => 'phút',
+        's' => 'giây',
 
-        'y' => 'tahun',
-        'm' => 'bulan',
-        'd' => 'hari',
-        'h' => 'jam',
-        'i' => 'menit',
-        's' => 'detik',
-
-        'ago' => 'yang lalu.',
-        'future' => 'ke depan.',
-        'recently' => 'baru saja.',
+        'ago' => 'trước.',
+        'future' => 'sau.',
+        'recently' => 'vừa xong.',
     ],
 
     /**
      * Validator.
      */
     \Core\Valid\Validator::NAME => [
-
         'request' => [
-            'required' => ':field dibutuhkan!.',
-            'email' => ':field tidak valid!.',
-            'dns' => ':field tidak valid!.',
-            'url' => ':field tidak valid!.',
-            'ip' => ':field tidak valid!.',
-            'uuid' => ':field bukan uuid!.',
-            'int' => ':field harus angka!.',
-            'float' => ':field harus desimal!.',
-            'min' => ':field panjang minimal: :attribute',
-            'max' => ':field panjang maxsimal: :attribute',
-            'sama' => ':field tidak sama dengan :attribute',
-            'unik' => ':field sudah ada!.',
+            'required' => ':field là bắt buộc!',
+            'email' => ':field không hợp lệ!',
+            'dns' => ':field không hợp lệ!',
+            'url' => ':field không hợp lệ!',
+            'ip' => ':field không hợp lệ!',
+            'uuid' => ':field không phải là UUID!',
+            'int' => ':field phải là số nguyên!',
+            'float' => ':field phải là số thập phân!',
+            'min' => ':field phải có độ dài tối thiểu: :attribute',
+            'max' => ':field phải có độ dài tối đa: :attribute',
+            'sama' => ':field không khớp với :attribute',
+            'unik' => ':field đã tồn tại!',
         ],
 
         'file' => [
-            'required' => ':field dibutuhkan!.',
-            'min' => ':field panjang minimal: :attribute',
-            'max' => ':field panjang maxsimal: :attribute',
-            'mimetypes' => ':field diperbolehkan: :attribute',
-            'mimes' => ':field diperbolehkan: :attribute',
-            'unsafe' => ':field terindikasi tidak aman!.',
-            'corrupt' => ':field tidak terupload dengan benar!.',
+            'required' => ':field là bắt buộc!',
+            'min' => ':field phải có kích thước tối thiểu: :attribute',
+            'max' => ':field phải có kích thước tối đa: :attribute',
+            'mimetypes' => ':field chỉ cho phép: :attribute',
+            'mimes' => ':field chỉ cho phép: :attribute',
+            'unsafe' => ':field được phát hiện là không an toàn!',
+            'corrupt' => ':field không được tải lên đúng cách!',
         ],
-    ]
+    ],
 ];
