@@ -14,11 +14,11 @@ class TranslatorServiceProvide extends Provider
      */
     public function booting()
     {
-        $allowedLanguages = ['id', 'en'];
-        $requestLang = strtolower(request()->get('lang', 'id'));
+        $allowedLanguages = ['id', 'en', 'vi'];
+        $requestLang = strtolower(request()->get('lang', 'vi'));
 
         if (!in_array($requestLang, $allowedLanguages, true)) {
-            $requestLang = 'id';
+            $requestLang = 'vi';
         }
 
         Trans::setLanguage($requestLang);
